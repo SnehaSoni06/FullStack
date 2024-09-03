@@ -3,15 +3,18 @@ import {AppBar,Toolbar,Box,styled, Typography} from '@mui/material';
 
 import Search from './Search';
 import CustomButtons from './CustomButtons';
+import {Link} from 'react-router-dom';
 
 //styled is applied on AppBar and it is stored in StyledHeader
 const StyledHeader = styled(AppBar)`  
     background: #2874f0;
     height: 55px;
 `;
-const Component = styled(Box)`  
+const Component = styled(Link)`  
     margin-left:14%;
-    line-height=0;
+    line-height:0;
+    text-decoration:none;
+    color:inherit;
 `;
 const SubHeading = styled(Typography)`  
     font-size:12%;
@@ -34,7 +37,7 @@ const Header=()=>{
         <StyledHeader>  {/*AppBar changed to StyledHeader*/}
 
             <Toolbar style={{minHeight:55}}>
-                 <Component>             {/*  // Box is altenate of div in materail ui And box name is changed to component*/} 
+                 <Component to='/'>             {/*  // Box is altenate of div in materail ui And box name is changed to component*/} 
                     <img src={logoURL} alt='logo' style={{width:75 }}/>
 
                     <Box style={{display:'flex'}}>    {/*made another box to include typography*/}
